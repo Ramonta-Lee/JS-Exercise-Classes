@@ -176,10 +176,10 @@ class Student extends Lambdasian {
     return this.favSubjects
   }
   PRAssignment (subject) {
-    return `student.name has submitted a PR for ${subject}.`;
+    return `${this.name}student.name has submitted a PR for ${subject}.`;
   }
   sprintChallenge (subject) {
-    return `student.name has begun sprint challenge on ${subject}`;
+    return `${this.name} has begun sprint challenge on ${subject}`;
   }
 }
 
@@ -204,10 +204,10 @@ class ProjectManager extends Instructor {
     this.favInstructor = Obj.favInstructor;
   }
   standUp (channel) {
-    return `${name} announces to ${channel}, @channel standy times!`;
+    return `${this.name} announces to ${channel}, @channel standy times!`;
   }
   debugsCode (student, subject) {
-    return `${name} debus ${student.name}'s code on ${subject}`;
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
   }
 
 }
@@ -220,6 +220,8 @@ class ProjectManager extends Instructor {
       + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
+
+
 
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
