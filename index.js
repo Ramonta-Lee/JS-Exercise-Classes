@@ -111,10 +111,10 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  constructor (arg){
-    this.name = arg.name;
-    this.age = arg.age;
-    this.location = arg.location;
+  constructor (Obj){
+    this.name = Obj.name;
+    this.age = Obj.age;
+    this.location = Obj.location;
   }
   speak(){
     return `Hello my name is ${this.name}, I am from ${this.location}`;
@@ -136,11 +136,11 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor extends Lambdasian {
-  constructor (arg) {
-    super(arg);
-    this.specialty = arg.specialty;
-    this.favLanguage = arg.favLanguage;
-    this.catchPhrase = arg.catchPhrase;
+  constructor (Obj) {
+    super(Obj);
+    this.specialty = Obj.specialty;
+    this.favLanguage = Obj.favLanguage;
+    this.catchPhrase = Obj.catchPhrase;
   }
   demo(subject){
     return `Today we are learning about ${subject}`;
@@ -181,7 +181,7 @@ class Student extends Lambdasian {
   sprintChallenge (subject) {
     return `student.name has begun sprint challenge on ${subject}`;
   }
-
+}
 
 
 /*
@@ -197,7 +197,18 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor {
+  constructor (Obj) {
+    super(Obj)
+    this.gradClassName = Obj.gradClassName;
+    this.favInstructor = Obj.favInstructor;
+  }
+  standUp (channel) {
+    return `${name} announces to ${channel}, @channel standy times!`;
+  }
+  debugsCode (student, subject) {
+    return `${name} debus ${student.name}'s code on ${subject}`;
+  }
 
 }
 
